@@ -1,0 +1,428 @@
+ASSIGNMENT-1
+
+Q1) Identify the Data type for the Following: 
+
+Activity	- Data Type
+Number of beatings from Wife	- Discrete
+Results of rolling dice	- Discrete
+Weight of a person	- Continous
+Weight of Gold -	Continous
+Distance between two places -	 Continous
+Length of a leaf -	Continous
+Dog's weight -	Continous
+Blue Color -	Categorical
+Number of kids -	Discrete
+Number of tickets in Indian railways -	Discrete
+Number of times married -	Discrete
+Gender (Male or Female) -	Categorical
+
+Q2) Identify the Data types, which were among the following
+Nominal, Ordinal, Interval, Ratio.
+Data -	Data Type
+Gender -	Nominal
+High School Class Ranking -	Ordinal
+Celsius Temperature - Interval
+Weight -	Ratio
+Hair Color -	Nominal
+Socioeconomic Status -	Nominal
+Fahrenheit Temperature -	Interval
+Height -	Ratio
+Type of living accommodation -	Nominal
+Level of Agreement -	Ordinal
+IQ (Intelligence Scale) -	Ordinal
+Sales Figures -	Ratio
+Blood Group -	Nominal
+Time Of Day -	Nominal
+Time on a Clock with Hands - Interval
+Number of Children -	Ratio
+Religious Preference -	Ordinal
+Barometer Pressure -	Ratio
+SAT Scores -	Interval
+Years of Education -	Ratio
+
+Q3) Three Coins are tossed, find the probability that two heads and one tail are obtained?
+Ans. Three Coins are tossed i.e., 
+Sample Space (S) = {HHH, TTT, HTT, THT, TTH, THH, HTH, HHT}
+i.e., n(S) = 8
+We have to find two heads and one tail, 
+So, Favourable Outcomes will be = {THH, HTH, HHT}
+i.e., n(A) = 3
+Hence required Probability is,
+Probability = Number of favourable outcomes / number of possible outcomes or sample space
+
+P(E)=  (n(A))/(n(S))
+
+P(E)=3/8
+
+Hence, when three coins are tossed, the probability of two heads and one tail is 3/8.
+
+Q4) Two Dice are rolled, find the probability that sum is
+	Equal to 1
+	Less than or equal to 4
+	Sum is divisible by 2 and 3
+Ans. Two dice are rolled i.e.,
+Sample Space (S) = {(1,1),(1,2),(1,3),(1,4),(1,5),(1,6)
+                                 (2,1),(2,2),(2,3),(2,4),(2,5),(2,6)
+                                 (3,1),(3,2),(3,3),(3,4),(3,5),(3,6)
+                                  (4,1),(4,2),(4,3),(4,4),(4,5),(4,6)
+                                   (5,1),(5,2),(5,3),(5,4),(5,5),(5,6)
+                                    (6,1),(6,2),(6,3),(6,4),(6,5),(6,6)}
+i.e., n(S) = 6*6
+=36
+	Equal to 1
+The sum is equal to 1 is zero (0) because, the above table starts with (1,1)….likewise, other than in the dice we are not having zero.
+	Less than or Equal to 4
+The sum is equal to 4 is possible i.e.,
+The favourable outcomes are = {(1,3),(2,2),(3,1)}
+i.e., n(b) = 3
+Hence the required probability,
+P(E)=  (n(b))/(n(S))
+
+P(E)=3/36
+
+P(E)=1/12
+
+	Sum is divisible by 2 and 3
+The sum is divisible by 2 and 3 is possible and is less than 13. Here the total favourable outcomes will come i.e., n(c) = 36 
+Hence the required probability is,
+
+P(E)=  (n(c))/(n(S))
+
+P(E)=36/36
+
+P(E)=1
+
+
+Q5) A bag contains 2 red, 3 green and 2 blue balls. Two balls are drawn at random. What is the probability that none of the balls drawn is blue?
+Ans. Total number of balls = (2+3+2)
+Let S be the sample space
+Then, n(S) = Number of ways of drawing 2 balls out of 7
+
+n_(C_r ) = n!/[r!(n-r)!]
+                  = 7_(C_2 )  
+                  = 21
+
+Now, 
+Let E = Event of drawing 2 balls, none of which is blue.
+Since, n(E) = Number of ways of drawing 2 balls out of (2+3) balls.
+=5_(C_2 )  
+=(2*1)(5*1)
+=10
+Hence,
+
+P(E)=  (n(E))/(n(S))
+
+P(E)=  10/21
+
+P(E) = 0.47
+
+Q6) Calculate the Expected number of candies for a randomly selected child 
+Below are the probabilities of count of candies for children (ignoring the nature of the child-Generalized view)
+
+CHILD	Candies count	Probability
+A	1	0.015
+B	4	0.20
+C	3	0.65
+D	5	0.005
+E	6	0.01
+F	2	0.120
+
+Child A – probability of having 1 candy = 0.015.
+Child B – probability of having 4 candies = 0.20
+
+Ans. Expected number of candies for a randomly selected child is 
+E(X) = ∑▒X*P(X) 
+= 1*0.015 + 4*0.20 + 3*0.65 + 5*0.005 + 6*0.01 + 2*0.120
+= 3.09
+
+Q7) Calculate Mean, Median, Mode, Variance, Standard Deviation, Range &  comment about the values / draw inferences, for the given dataset
+	For Points, Score, Weigh>
+Find Mean, Median, Mode, Variance, Standard Deviation, and Range and also Comment about the values/ Draw some inferences.
+Use Q7.csv file.
+
+Ans. 
+
+df = pd.read_csv("Q7.csv")
+df
+
+df['Points']
+
+df['Points'].mean()
+3.5965625000000006
+
+df['Points'].median()
+Out[5]:
+3.6950000000000003
+
+df['Points'].mode()
+Out[6]:
+0    3.07
+1    3.92
+
+df['Points'].std()
+0.5346787360709716
+
+df['Points'].var()
+0.28588135080645166
+
+maximum = max(df['Points'])
+
+minimum = min(df['Points'])
+
+Range = maximum - minimum
+Range
+2.17
+
+
+Q8) Calculate Expected Value for the problem below
+	The weights (X) of patients at a clinic (in pounds), are
+108, 110, 123, 134, 135, 145, 167, 187, 199
+Assume one of the patients is chosen at random. What is the Expected Value of the Weight of that patient?
+Ans. a) The weights (X) of patients at a clinic (in pounds) are 
+108,110,123,134,135,145,167,187,199.
+Expected Value [E(X)] = = ∑▒X*P(X) 
+Since, 
+Probability of 108 patients is 1/9
+Similarly, for all patients given here probability is 1/9
+Now,
+Expected Value = [(108)*/1/9 + (110)*1/9 + (123)*1/9 + (134)*1/9 + (145)*1/9 + (167)*1/9+ (187)*1/9+ (199)*1/9
+= 145.33
+
+Q9) Calculate Skewness, Kurtosis & draw inferences on the following data
+	Car’s speed and distance 
+Use Q9_a.csv
+	SP and Weight (WT)
+Use Q9_b.csv
+
+Ans.
+Q.9(a)>>>
+df = pd.read_csv("https://s3-ap-southeast-1.amazonaws.com/elearning.excelr.com/DS/Assignments/Basic+Statistics/Level-1/Q9_a.csv")
+df
+
+df['speed']
+
+df['speed'].skew()
+-0.11750986144663393
+
+df['speed'].kurt()
+-0.5089944204057617
+
+Q.9(b)>>>>
+df = pd.read_csv("https://s3-ap-southeast-1.amazonaws.com/elearning.excelr.com/DS/Assignments/Basic+Statistics/Level-1/Q9_b.csv")
+df
+
+df['SP']
+
+df['SP'].skew()
+1.6114501961773586
+
+df['SP'].kurt()
+2.9773289437871835
+
+df['WT']
+
+df['WT'].skew()
+-0.6147533255357768
+
+df['WT'].kurt()
+0.9502914910300326
+
+
+Q10) Draw inferences about the following boxplot & histogram
+ 
+Ans.  
+	The histograms peak has right skew and tail is on right.
+	Mean>Median.
+	We have outliers on the higher side.
+	The boxplot has outliers on the maximum side.
+
+Q11) Suppose we want to estimate the average weight of an adult male in Mexico. We draw a random sample of 2,000 men from a population of 3,000,000 men and weigh them. We find that the average person in our sample weighs 200 pounds, and the standard deviation of the sample is 30 pounds. Calculate 94%,98%,96% confidence interval?
+
+Ans. 
+
+from scipy import stats
+from scipy.stats import norm
+import numpy as np
+
+conf_94 =stats.t.interval(alpha = 0.94, 
+                          df=1999, 
+                          loc=200, 
+                          scale=30/np.sqrt(2000)) 
+print(np.round(conf_94,0)) 
+print(conf_94) 
+
+[199. 201.]
+(198.7376089443071, 201.2623910556929)
+
+conf_98 =stats.t.interval(alpha = 0.98, 
+                          df=1999, 
+                          loc=200, 
+                          scale=30/np.sqrt(2000)) 
+print(np.round(conf_98,0)) 
+print(conf_98) 
+
+[198. 202.]
+(198.4381860483216, 201.5618139516784)
+
+conf_99 =stats.t.interval(alpha = 0.99, 
+                          df=1999, 
+                          loc=200, 
+                          scale=30/np.sqrt(2000)) 
+print(np.round(conf_99,0)) 
+print(conf_99) 
+
+[198. 202.]
+(198.27042980437153, 201.72957019562847)
+
+Q12) Below are the scores obtained by a student in tests 
+34,36,36,38,38,39,39,40,40,41,41,41,41,42,42,45,49,56
+	Find mean, median, variance, standard deviation.
+	What can we say about the student marks? 
+Ans.
+a)  
+Mean = 41,
+Median = 40.5
+Variance = 25.52
+Standard Deviation = 0.05
+b) We don’t have outliers and the data is slightly skewed towards right because mean is greater than median.
+
+Q13) What is the nature of skewness when mean, median of data are equal?
+Ans. No skewness is present we have a perfect symmetrical distribution.
+
+Q14) What is the nature of skewness when mean > median?
+Ans. Skewness and tail is towards right.
+
+Q15) What is the nature of skewness when median > mean?
+Ans. Skewness and tail is towards left.
+
+Q16) What does positive kurtosis value indicates for a data?
+Ans. Positive Kurtosis value indicates that the curve is more peaked and it is Leptokurtic.
+
+Q17) What does negative kurtosis value indicates for a data?
+Ans. Negative Kurtosis value indicates that the curve is flatter and broad and it is Platykurtic.
+
+Q18) Answer the below questions using the below boxplot visualization.
+ 
+	What can we say about the distribution of the data?
+	What is nature of skewness of the data?
+	What will be the IQR of the data (approximately)? 
+Ans.  
+a) The above boxplot is not normally distributed. The median is towards the higher value.
+b) The data is skewed towards left. The whisker range of minimum value is greater than maximum.
+c) The Inter Quartile Range = Q3 – Q1
+= 18-10
+=8
+
+Q19) Comment on the below Boxplot visualizations? 
+ 
+Draw an Inference from the distribution of data for Boxplot 1 with respect Boxplot 2.
+Ans. 
+	First there are no outliers.
+	Second, both the boxplot shares the same median that is approximately in a range between 275 to 250 an they are normally distributed with zero to no skewness neither at the minimum or maximum whisker range.
+
+Q 20) Calculate probability from the given dataset for the below cases
+Data _set: Cars.csv
+Calculate the probability of MPG of Cars for the below cases.
+       MPG <- Cars$MPG
+	P(MPG>38)
+	P(MPG<40)
+	P (20<MPG<50)
+
+Ans.  
+df = pd.read_csv('Cars.csv')
+df
+
+print("Probability that 'MPG' > 38 = ", 
+      np.round(1-stats.norm.cdf(38, 
+     loc = df.MPG.mean(), 
+     scale = df.MPG.std()), 
+    3))   
+    
+Probability that 'MPG' > 38 =  0.348    
+    
+ print("Probability that 'MPG' < 40 = ", 
+      np.round(1-stats.norm.cdf(38, 
+     loc = df.MPG.mean(), 
+     scale = df.MPG.std()), 
+    3)) 
+  
+  Probability that 'MPG' < 40 =  0.348
+  
+ print("Probability that 20 < 'MPG' < 50 = ", 
+      np.round(1-stats.norm.cdf(38, 
+     loc = df.MPG.mean(), 
+     scale = df.MPG.std()), 
+    3)) 
+
+Probability that 20 < 'MPG' < 50 =  0.348
+
+Q 21) Check whether the data follows normal distribution
+	Check whether the MPG of Cars follows Normal Distribution 
+Dataset: Cars.csv
+	Check Whether the Adipose Tissue (AT) and Waist Circumference (Waist)  from wc-at data set  follows Normal Distribution 
+Dataset: wc-at.csv
+Ans.  
+a) MPG of cars follows normal distribution
+b) Adipose Tissue (AT) and Waist Circumference (Waist) does not follow normal distribution.
+
+Q 22) Calculate the Z scores of 90% confidence interval,94% confidence interval, 60% confidence interval 
+Ans.  
+
+from scipy import stats
+from scipy.stats import norm
+
+# z-score of 90% confidence interval
+stats.norm.ppf(0.95)
+1.6448536269514722
+
+# z-score of 94% confidence interval
+stats.norm.ppf(0.97)
+1.8807936081512509
+
+# z-score of 60% confidence interval
+stats.norm.ppf(0.8)
+0.8416212335729143
+
+Q 23) Calculate the t scores of 95% confidence interval, 96% confidence interval, 99% confidence interval for sample size of 25.
+
+Ans.  
+
+from scipy import stats
+from scipy.stats import norm
+import numpy as np
+
+# t score for 95% confidence interval
+np.round(stats.t.ppf(0.95,df=24))
+2.0
+
+# t score for 96% confidence interval
+np.round(stats.t.ppf(0.96,df =24))
+2.0
+
+# t score for 99% confidence interval
+np.round(stats.t.ppf(0.99, df=24))
+2.0
+
+  Q 24)   A Government company claims that an average light bulb lasts 270 days. A researcher randomly selects 18 bulbs for testing. The sampled bulbs last an average of 260 days, with a standard deviation of 90 days. If the CEO’s claim were true, what is the probability that 18 randomly selected bulbs would have an average life of no more than 260 days
+Hint:  
+   rcode   pt(tscore,df)  
+ df  degrees of freedom
+
+Ans.
+
+import numpy as np
+from scipy import stats
+
+# t_score = (x-pop mean)/(standard deviation/square root of sample size)
+t_score = (260-270)/(90/np.sqrt(18))
+t_score
+-0.4714045207910317
+
+stats.t.cdf(-0.471, df=17)
+0.3218140331685075
+
+Submitted by: - Somya Agrawal
+
+
+
+
